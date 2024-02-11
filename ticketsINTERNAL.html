@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Made by CoffeeCup Software Refitted by Vance-->
+    <link href="./css/ticket/metro-all.css" rel="stylesheet" />
+    <link href="./css/ticket/custom.css" rel="stylesheet" />
+
+    <title>HACO Fare Calculator</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="RSD 5.0.3499" />
+    <link rel="stylesheet" href="css/vanillacss.min.css" />
+    <link rel="stylesheet" href="css/wireframe-theme.min.css" />
+    <link rel="icon" href="" />
+    <script>
+      document.createElement("picture");
+    </script>
+    <script
+      class="picturefill"
+      async="async"
+      src="js/picturefill.min.js"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,b%7CInter:400,500,b"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+
+    <script>
+      var scroll = new SmoothScroll('a[href*="#"][data-scroll]', {
+        speed: 600,
+      });
+    </script>
+
+    <link rel="stylesheet" href="./fonts/stylesheet.css" />
+  </head>
+
+  <body class="body-1">
+    <nav class="container neutral-navbar">
+      <img src="./images/logoDark.png" width="50px" height="50px" /><a
+        class="link-text nav-logo"
+        href="index.html"
+        data-scroll=""
+      >
+        Haurs & Co Transportation</a
+      >
+      <div class="container navigation-links neutral-right-menu">
+        <a
+          class="glyph mobile-nav-button close-button-cross neutral-right-button"
+          href="#!"
+          ><i class="coffeecup-icons-cross2"></i
+        ></a>
+        <a class="link-text neutral-nav-link-menu" href="index.html">Home</a>
+        <a class="link-text neutral-nav-link-menu" href="about.html">About</a>
+        <a class="link-text neutral-nav-link-menu" href="tickets.html"
+          >Tickets</a
+        >
+        <a class="link-text neutral-nav-link-menu" href="contact.html"
+          >Contact</a
+        >
+      </div>
+      <div class="html-element navigation-code">
+        <script>
+          document.addEventListener("DOMContentLoaded", function (event) {
+            $(".mobile-nav-button.neutral-right-button").click(function (e) {
+              $(".navigation-links.neutral-right-menu").toggleClass(
+                "show-menu"
+              );
+              $("body").css(
+                "overflow",
+                $(".navigation-links.neutral-right-menu").hasClass("show-menu")
+                  ? "hidden"
+                  : "auto"
+              );
+            });
+          });
+        </script>
+      </div>
+      <a class="glyph mobile-nav-button neutral-right-button" href="#!"
+        ><i class="coffeecup-icons-menu"></i
+      ></a>
+    </nav>
+    <script src="./css/ticket/metro.js"></script>
+    <div class="container-flex">
+      <div class="grid">
+        <div class="row flex-align-center">
+          <marquee
+            ><span class="ribbed-red fg-white border bd-amber h3"
+              >PROTOTYPE - Not For Public Use</span
+            ></marquee
+          >
+        </div>
+        <div style="margin: 0px 20px; border: inset thick #32a1ce">
+          <div class="row flex-align-center">
+            <div class="cell-12 bg-secondary rounded">
+              <span class="img-container place-right">
+                <img
+                  src="./images/logo.png"
+                  style="float: right; width: 200px; height: 200px; opacity: 1"
+                />
+                <h1 class="display3">
+                  Haurs & Co. Fare Calculator
+
+                  <a class="fg-secondary fg-brown-hover mif-shit"></a>
+                </h1>
+                <div>
+                  <p class="fg-grayMouse">
+                    This program may contain proprietary, business-confidential
+                    and/or privileged material. Be aware that any use, review,
+                    retransmission, distribution, reproduction or any action
+                    taken not in accordance to the Board of Transportation
+                    within the United Earth Empires, or local, regional, and
+                    governmental regulations throughout all United Earth Empire
+                    territories and systems may result in criminal punishment
+                    and/or fines.
+                  </p>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div style="margin: 0px 20px; border: ridge #32a1ce">
+          <div class="row flex-align-center ontop">
+            <div class="cell-4 bg-secondary fg-primary rounded">
+              <h2>Market Costs</h2>
+              <p>Hydrogen Fuel Cost</p>
+              <input
+                type="number"
+                data-role="input"
+                class="input-small"
+                data-append="UEC"
+                data-target="#hydrogen"
+              />
+              <span>Current Rate: xx.xx UEC</span>
+              <p>Quantum Fuel Cost</p>
+              <input
+                type="number"
+                data-role="input"
+                class="input-small"
+                data-append="UEC"
+                data-target="#quantum"
+              />
+              <span>Current Rate: xx.xx UEC</span>
+              <p>Base Distance</p>
+              <span
+                ><input
+                  type="radio"
+                  data-role="radio"
+                  data-caption="Local"
+                  name="distance"
+                  data-target="#LocDist" />
+                <input
+                  type="radio"
+                  data-role="radio"
+                  data-caption="System"
+                  name="distance"
+                  data-target="#SysDist"
+              /></span>
+              <p>Crew Size</p>
+              <input
+                data-role="slider"
+                data-hint="true"
+                data-hint-position="right"
+                data-hint-always="true"
+                data-min="1"
+                data-max="10"
+                data-value="2"
+                class="cycle-marker"
+                data-target="#crew"
+              />
+              <p>Ship</p>
+              <select data-role="select" class="input-small ontop">
+                <optgroup label="Cargo">
+                  <option value="Crusader C2">Crusader C2</option>
+                  <option value="Anvil Lib">Anvil Liberator</option>
+                  <option value="Drake Caterpillar">Drake Caterpillar</option>
+                  <option value="Misc Hull">Misc Hull</option>
+                  <option value="OtherC">Other Cargo</option>
+                </optgroup>
+                <optgroup label="Passenger">
+                  <option value="Crusader Starliner">Crusader Starliner</option>
+                  <option value="RSI Connie Phoenix">RSI Connie Phoenix</option>
+                  <option value="Origin 890">890 VOMIT</option>
+                  <option value="Crusader E1" selected="selected">
+                    Crusader E1
+                  </option>
+                  <option value="OtherP">Other Passenger</option>
+                </optgroup>
+              </select>
+              <p></p>
+              <textarea
+                data-role="textarea"
+                placeholder="Route Plan... Use 4 letter locations from handbook."
+                data-prepend="<span class='mif-leanpub'></span>"
+              ></textarea>
+              <p>Stops</p>
+              <input
+                data-role="slider"
+                data-hint="true"
+                data-hint-position="right"
+                data-hint-always="true"
+                data-min="1"
+                data-max="10"
+                data-value="2"
+                class="cycle-marker"
+                data-target="#stops"
+              />
+            </div>
+
+            <div class="cell-8 text-center">
+              <div class="display4">Current Ticket Cost:</div>
+            </div>
+          </div>
+
+          <div class="row flex-align-center">
+            <div class="cell-4 bg-secondary fg-primary rounded">
+              <h2>Cargo and Pax Quantity</h2>
+              <div class="scuCargo" id="scuCargo"></div>
+              <input
+                data-role="slider"
+                data-hint="true"
+                data-hint-position="right"
+                data-min="0"
+                data-max="500"
+                data-accuracy="0.01"
+                data-value="0"
+                class="cycle-marker"
+                data-target="#scuCargo"
+              />
+              <div class="paxAmount" id="paxAmount"></div>
+              <input
+                data-role="slider"
+                data-hint="true"
+                data-hint-position="right"
+                data-min="0"
+                data-max="100"
+                data-accuracy="1"
+                data-value="1"
+                class="cycle-marker"
+                data-target="#paxAmount"
+              />
+              <div class="groundVeh" id="groundVeh"></div>
+              <input
+                data-role="slider"
+                data-hint="true"
+                data-hint-position="right"
+                data-min="0"
+                data-max="10"
+                data-accuracy="1"
+                data-value="0"
+                class="cycle-marker"
+                data-target="#groundVeh"
+              />
+              <div class="paxClass" id="paxClass"></div>
+              <input
+                data-role="slider"
+                data-hint="true"
+                data-hint-position="right"
+                data-min="1"
+                data-max="4"
+                data-accuracy="0"
+                data-value="1"
+                class="cycle-marker"
+                data-target="#paxClass"
+              />
+            </div>
+
+            <div class="cell-8 text-center">
+              <div class="display4 neonText tixPrice">0 UEC</div>
+              <div class="h4 feePrice">0 UEC</div>
+            </div>
+          </div>
+
+          <div class="row flex-align-center">
+            <div class="cell-4 bg-secondary fg-primary rounded">
+              <h2>Taxes and Fees</h2>
+              <table
+                class="table fg-primary rounded"
+                data-role="table"
+                data-show-search="false"
+                data-show-pagination="false"
+                data-show-rows-steps="false"
+                data-show-table-info="false"
+              >
+                <thead>
+                  <tr>
+                    <th class="fg-primary">Tax or Fee</th>
+                    <th class="fg-primary">Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="paxTax"></div></td>
+                    <td><div class="paxTaxFee">UEC</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="segTax"></div></td>
+                    <td><div class="segTaxFee">UEC</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="secTax"></div></td>
+                    <td><div class="secTaxFee">UEC</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="facTax"></div></td>
+                    <td><div class="facTaxFee">UEC</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="carFee"></div></td>
+                    <td><div class="carFeeFee">UEC</div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="surcharge"></div></td>
+                    <td><div class="surchargeFee">UEC</div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="cell-8 text-center">
+              <div class="h2 fg-white totPrice">0 UEC</div>
+              <div>
+                <input
+                  class="ribbed-dark fg-primary rounded"
+                  type="checkbox"
+                  data-role="checkbox"
+                  data-caption="I understand exporting a ticket binds the user to the financial terms of service and HACO Code of Justice."
+                />
+                <div style="padding: 14px">
+                  <button
+                    id="create"
+                    class="button success large bg-lime-active rounded"
+                    data-role="ripple"
+                  >
+                    <span class="mif-checkmark"></span>Generate Ticket!
+                  </button>
+                  <a
+                    download="ticket.txt"
+                    id="downloadlink"
+                    style="display: none"
+                    >Download Ticket</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="container container-footer-section">
+      <div class="container footer-3-columns">
+        <div class="container container-content-footer">
+          <a class="link-text logo-footer" href="index.html" data-scroll=""
+            ><img src="./images/logo.png" width="100px" height="100px"
+          /></a>
+        </div>
+        <div class="container container-content-footer">
+          <div class="container container-1" id="container-1">
+            <a class="link-text neutral-footer-link" href="index.html">Home</a>
+            <a class="link-text neutral-footer-link" href="about.html">About</a>
+            <a class="link-text neutral-footer-link" href="tickets.html"
+              >Tickets</a
+            >
+            <a class="link-text neutral-footer-link" href="contact.html"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div class="container container-content-footer">
+          <div class="container container-1">
+            <a class="link-text neutral-footer-link"
+              ><img
+                src="./images/MadeByTheCommunity_Black.png"
+                width="100px"
+                height="100px"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright">
+        <a
+          >Star Citizen®, Roberts Space Industries® and Cloud Imperium ® are
+          registered trademarks of Cloud Imperium Rights LLC</a
+        >
+      </div>
+    </footer>
+    <script>
+      let tix = document.querySelectorAll(".tixPrice")[0].innerText;
+      let fee = document.querySelectorAll(".feePrice")[0].innerText;
+      const Tax = 500 + 20 + 200 + 120 + 3 + 15;
+      let y = 0;
+
+      onchange = (event) => {
+        pax = document.querySelectorAll("#paxAmount")[0].innerText;
+        crew = 2;
+        cargo = document.querySelectorAll("#scuCargo")[0].innerText;
+        pclass = document.querySelectorAll("#paxClass")[0].innerText;
+        veh = document.querySelectorAll("#groundVeh")[0].innerText;
+        t = Tax + Number(pax);
+        p = pax * 1.5 * 3000;
+        c = crew * 2;
+        cc = cargo ** 2 * 50;
+        g = veh ** 2.5 * 100;
+
+        s = pclass / 0.25;
+        y = c + cc + g + p;
+        x = Math.round(y / s);
+        z = Math.round(x + t);
+        tix = x + " UEC";
+        fee = "Taxes & Fees:" + t + " UEC";
+        tot = "Total Cost: " + z + " UEC";
+        document.querySelectorAll(".tixPrice")[0].innerText = tix;
+        document.querySelectorAll(".feePrice")[0].innerText = fee;
+        document.querySelectorAll(".totPrice")[0].innerText = tot;
+      };
+      (function () {
+        var textFile = null,
+          makeTextFile = function (text) {
+            var data = new Blob([text], { type: "text/plain" });
+
+            // If we are replacing a previously generated file we need to
+            // manually revoke the object URL to avoid memory leaks.
+            if (textFile !== null) {
+              window.URL.revokeObjectURL(textFile);
+            }
+
+            textFile = window.URL.createObjectURL(data);
+
+            return textFile;
+          };
+
+        var create = document.getElementById("create"),
+          output = "test";
+
+        create.addEventListener(
+          "click",
+          function () {
+            var link = document.getElementById("downloadlink");
+            link.href = makeTextFile(output);
+            link.style.display = "block";
+          },
+          false
+        );
+      })();
+    </script>
+  </body>
+</html>

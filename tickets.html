@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Made by CoffeeCup Software Refitted by Vance-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="RSD 5.0.3499" />
+    <title>contact page</title>
+    <link rel="stylesheet" href="css/vanillacss.min.css" />
+    <link rel="stylesheet" href="css/wireframe-theme.min.css" />
+    <link rel="icon" href="" />
+    <script>
+      document.createElement("picture");
+    </script>
+    <script
+      class="picturefill"
+      async="async"
+      src="js/picturefill.min.js"
+    ></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,b%7CInter:400,500,b"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+      var scroll = new SmoothScroll('a[href*="#"][data-scroll]', {
+        speed: 600,
+      });
+    </script>
+  </head>
+  <body class="body-1">
+    <nav class="container neutral-navbar">
+      <img src="./images/logoDark.png" width="50px" height="50px" /><a
+        class="link-text nav-logo"
+        href="index.html"
+        data-scroll=""
+      >
+        Haurs & Co Transportation</a
+      >
+      <div class="container navigation-links neutral-right-menu">
+        <a
+          class="glyph mobile-nav-button close-button-cross neutral-right-button"
+          href="#!"
+          ><i class="coffeecup-icons-cross2"></i
+        ></a>
+        <a class="link-text neutral-nav-link-menu" href="index.html">Home</a>
+        <a class="link-text neutral-nav-link-menu" href="about.html">About</a>
+        <a class="link-text neutral-nav-link-menu" href="tickets.html"
+          >Tickets</a
+        >
+        <a class="link-text neutral-nav-link-menu" href="contact.html"
+          >Contact</a
+        >
+      </div>
+      <div class="html-element navigation-code">
+        <script>
+          document.addEventListener("DOMContentLoaded", function (event) {
+            $(".mobile-nav-button.neutral-right-button").click(function (e) {
+              $(".navigation-links.neutral-right-menu").toggleClass(
+                "show-menu"
+              );
+              $("body").css(
+                "overflow",
+                $(".navigation-links.neutral-right-menu").hasClass("show-menu")
+                  ? "hidden"
+                  : "auto"
+              );
+            });
+          });
+        </script>
+      </div>
+      <a class="glyph mobile-nav-button neutral-right-button" href="#!"
+        ><i class="coffeecup-icons-menu"></i
+      ></a>
+    </nav>
+    <a class="glyph font-icon-link-1" href="#top" data-scroll=""
+      ><i class="coffeecup-icons-arrow-up4"></i
+    ></a>
+    <div class="container hero-about" id="top" data-color="white">
+      <div class="container hero-about-content-wrapper">
+        <h1 class="hero-about">
+          <span class="heading-text-3"
+            >Tickets&nbsp;<span class="heading-text-2"
+              ><span class="heading-text-6">––––</span>&nbsp;</span
+            ><br /></span
+          >Reserve your adventure today!
+        </h1>
+      </div>
+    </div>
+    <main>
+      <div class="container ticket-section">
+        <div class="container ticket-form-section">
+          <div class="container form-content-wrapper">
+            <form action>
+              <h3 class="paragraph big-paragraph">
+                Your next adventure awaits, fill out the form below to express
+                your intrest in any upcoming excursions.
+              </h3>
+
+              <div class="form-row">
+                <div class="omrs-input-group">
+                  <label class="omrs-input-underlined">
+                    <input required />
+                    <span class="omrs-input-label">Name</span>
+                    <span class="omrs-input-helper">Full Name</span>
+                  </label>
+                </div>
+                <div class="omrs-input-group">
+                  <label class="omrs-input-underlined">
+                    <input required />
+                    <span class="omrs-input-label">Spectrum</span>
+                    <span class="omrs-input-helper">Spectrum Handle</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-wrapper">
+                  <div class="omrs-input-group">
+                    <label class="omrs-input-underlined">
+                      <input
+                        type="date"
+                        min="2944-01-01"
+                        data-language="en"
+                        data-date-format="dd M yyyy"
+                        id="dp1"
+                      />
+                      <span class="omrs-input-helper">Date Requested</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-wrapper">
+                  <div class="omrs-input-group">
+                    <label class="omrs-input-underlined">
+                      <input
+                        type="number"
+                        id="paxAmount"
+                        name="quantity"
+                        min="1"
+                        max="5"
+                      />
+                      <span class="omrs-input-helper">Passengers</span>
+                    </label>
+                  </div>
+                  <div class="omrs-input-group">
+                    <label class="omrs-input-underlined">
+                      <input
+                        type="range"
+                        id="paxClass"
+                        name="class"
+                        class="slider"
+                        min="1"
+                        max="4"
+                        value="1"
+                      />
+                      <span class="omrs-input-helper"
+                        >Seating Class: <span id="pclass"></span
+                      ></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-wrapper">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" required /> This is not a Guarantee
+                      or Reservation for a flight on the date selected.
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row last">
+                <div class="form-wrapper">
+                  <a
+                    class="link-button ticket-button"
+                    role="button"
+                    formaction="_blank"
+                    data-scroll=""
+                    >Submit</a
+                  >
+                </div>
+              </div>
+              <div class="form-row center">
+                <div class="form-wrapper">
+                  <div class="text-center">
+                    <div class="h3 tixPrice">0 UEC</div>
+                    <div class="h4 feePrice">0 UEC</div>
+                    <div class="h2 totPrice">0 UEC</div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container ticket-image"></div>
+      </div>
+    </main>
+    <footer class="container container-footer-section">
+      <div class="container footer-3-columns">
+        <div class="container container-content-footer">
+          <a class="link-text logo-footer" href="index.html" data-scroll=""
+            ><img src="./images/logo.png" width="100px" height="100px"
+          /></a>
+        </div>
+        <div class="container container-content-footer">
+          <div class="container container-1" id="container-1">
+            <a class="link-text neutral-footer-link" href="index.html">Home</a>
+            <a class="link-text neutral-footer-link" href="about.html">About</a>
+            <a class="link-text neutral-footer-link" href="tickets.html"
+              >Tickets</a
+            >
+            <a class="link-text neutral-footer-link" href="contact.html"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div class="container container-content-footer">
+          <div class="container container-1">
+            <a class="link-text neutral-footer-link"
+              ><img
+                src="./images/MadeByTheCommunity_Black.png"
+                width="100px"
+                height="100px"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="container copyright">
+        <a
+          >Star Citizen®, Roberts Space Industries® and Cloud Imperium ® are
+          registered trademarks of Cloud Imperium Rights LLC</a
+        >
+      </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/outofview.js"></script>
+    <script>
+      var slider = document.getElementById("paxClass");
+      var output = document.getElementById("pclass");
+      output.innerHTML = slider.value; // Display the default slider value
+
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function () {
+        output.innerHTML = this.value;
+      };
+    </script>
+    <script>
+      let tix = document.querySelectorAll(".tixPrice")[0].innerText;
+      let fee = document.querySelectorAll(".feePrice")[0].innerText;
+      const Tax = 500 + 20 + 200 + 120 + 3 + 15;
+      let y = 0;
+
+      addEventListener("input", (event) => {
+        pax = document.querySelectorAll("#paxAmount")[0].innerText;
+        pclass = document.querySelector("#paxClass");
+        t = Tax + Number(pax);
+        p = pax * 1.5 * 3000;
+        s = pclass / 0.25;
+
+        x = p;
+        y = Math.round(x / s);
+        z = Math.round(y + t);
+        tix = y + " UEC";
+        fee = "Taxes & Fees:" + t + " UEC";
+        tot = "Total Cost: " + z + " UEC";
+        document.querySelectorAll(".tixPrice")[0].innerText = tix;
+        document.querySelectorAll(".feePrice")[0].innerText = fee;
+        document.querySelectorAll(".totPrice")[0].innerText = tot;
+      });
+    </script>
+  </body>
+</html>
